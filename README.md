@@ -22,6 +22,8 @@
 - This Code bedore being rendered in form of web page is compile bt **babel** compiler.
 - It does so using **React.createElement(element)**
 
+--------------------------------------------------------------------------------------------------------------
+
 ### 2)  export Default Component_Name vs export {comp1,comp2,comp3}
 - Incase of export Default Component name I can import component using any name from the file compoent has been exported
 - Incase of second option While importing I have to apply structuring and call components by same name otherwise error will be    thrown
@@ -39,9 +41,57 @@ import HomeComp  from 'file.js' => RIGHT
 import comp1 from 'file2.js' => WRONG as it's not defualt exported: => SOLN => import {comp1} from "file2.js"
 import {comp1,comp2,comp3} from 'file2.js'
 ______________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------------
 
 ### 3) Boostrap in React.js
 - There are two ways to get BS in your app
 - 1) Copy paste the BS CSS & JS links from website
 - 2) Install the bootstrap  using **npm i bootstrap@5.1.0** and import it in **app.js** as : **import 'bootstrap/dist/css/bootstrap.min.css'**
 - Note: Incase of second, for JS you have to import necessary links from via **link** tag in **index.html** for js to work.
+
+--------------------------------------------------------------------------------------------------------------
+
+### 4) props && propTypes ** c
+- **props**
+- Are properties that belong to component.
+- for exmaple if I am rendering folwing component say:
+______________________________________________________
+<Navbar title="React-app" pages="5" />
+______________________________________________________
+
+- title, pages here are **props** of component **Navbar** and can be accessed as
+______________________________________________________
+const Navbar=(props)=>{
+    return (
+        <>
+           <h1>{props.title}</h1>
+           <p>Pages avaibale are: {props.pages}</p>
+        <>
+    )
+}
+______________________________________________________
+pre-requisite: 
+- npm install prop-types --save
+- import PropTypes from 'prop-types';
+- **propTypes** are used to set the types for the props to be rececived
+______________________________________________________
+- example: 
+Navbar.propTypes={
+    title: PropTypes.string,
+    pages: PropTupes.string,
+    linktitle:PropTypes.string.isRequired
+}
+______________________________________________________
+
+ - **defaultProps**: are used to pass default props to the components.
+ - Incase values for components are not passed then default values can be picked up.
+ ______________________________________________________
+- example: 
+Navbar.defaultProps={
+    title: "Hello React",
+    pages: "10"
+    
+}
+______________________________________________________
+
+--------------------------------------------------------------------------------------------------------------
