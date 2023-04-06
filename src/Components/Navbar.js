@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 //Since Navbar is wrapped inside UserState it would be able to use the state provided by uUserContext API
@@ -6,14 +5,14 @@ import { useContext } from "react";
 import UserContext from "../Context/User/userContext";
 
 const Navbar = (props) => {
-  const {name,email}=useContext(UserContext);
+  const { userdata, setUserData } = useContext(UserContext);
 
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            {props.title} 
+            {props.title}
           </a>
 
           <button
@@ -74,9 +73,22 @@ const Navbar = (props) => {
                 <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
-          <div className="container">
-          {name} uses {email}
-          </div>
+            <div className="container">
+              {userdata.name} uses {userdata.email}
+              <button
+                className="btn-primary"
+                onClick={() => {
+                  setUserData({
+                    name: "Hero",
+                    email: "Hiralal@gmail.com",
+                    login: true,
+                  });
+                }}
+              >
+                Login
+              </button>
+              <p>{!userdata.login ? "User not logged in" : "User logged in"}</p>
+            </div>
           </div>
         </div>
       </nav>
