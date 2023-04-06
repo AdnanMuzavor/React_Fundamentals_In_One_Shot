@@ -86,10 +86,20 @@ const [text,setText]=useState("Hello")
 
 ## useEffect
 - This hook is call back function called when page is reloaded or state mentione in call back criteria changes
-- The systax is as follows
+- The systax is as follows:
 
+--------------------------------------
+useEffect(function,dependency)
+--------------------------------------
+
+Examples:
 ---------------------------------------
-  //This useeffect will be called as soon a spage reloads/loads
+//This useeffect is call on every render
+  useEffect(() => {
+    setcount(8);
+  });
+
+  //This useeffect will be called as soon a spage reloads/loads for first time
   useEffect(() => {
     setcount(8);
   }, []);
@@ -100,5 +110,35 @@ const [text,setText]=useState("Hello")
   }, [count]);
 ---------------------------------------
 
+## React Context
+- React Context is a way to manage state globally.
+- It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+- If this was not there qe would haqve to use prop driling where in prop state would ahve to be paased as prop to other component.
+- In our mini app we have made user login with his name and that name has been set to NavBar component to display.
+-  Simplest way: Wrap the entire app in an ContextProvider, so whatever state it has can be accessed by all components using      useContext Hook
+
+React state has components + state
+consider following
+____________________________________________________________________________________________________
+                      App.js
+                       |                                    _________________
+                       |                                    | Context login |
+       --------------------------------------------         | CreateContext |
+       |                      |                   |         -----------------
+     SHOP                    Blogs               Offers                    |
+       |                                          |                        |
+   --------------                             ----------         _______UseContext(login)
+   |            |                             |        |        |
+  Clothing     Food                          O1        O2--------
+                                                        \___> Login here wqe have login state which is true then accesing it at SHOP will be very complicated task
+____________________________________________________________________________________________________
+SOLN: L I F T    ____  T H E ____ S T A T E
+- i.e we keep the entire state in app.js so that all components can access it
+- But in that case we have to do prop drilling from App.js to respective component say o1
+- Hnec e login=true will go from App.js -> Offers -> O2 while offers still has nothing to do with it.
+
+VALID SOLN: Create a context and use context API
+- Context is out side of app.js and can be used by any component there in. it's isolated from component 
+  hierarchy as shown above
 
 

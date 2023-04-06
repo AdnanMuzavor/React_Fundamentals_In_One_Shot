@@ -1,14 +1,19 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+//Since Navbar is wrapped inside UserState it would be able to use the state provided by uUserContext API
+import { useContext } from "react";
+import UserContext from "../Context/User/userContext";
 
 const Navbar = (props) => {
+  const {name,email}=useContext(UserContext);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            {props.title}
+            {props.title} 
           </a>
 
           <button
@@ -69,17 +74,9 @@ const Navbar = (props) => {
                 <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+          <div className="container">
+          {name} uses {email}
+          </div>
           </div>
         </div>
       </nav>
