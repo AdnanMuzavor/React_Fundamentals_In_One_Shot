@@ -63,9 +63,9 @@ const Navbar = (props) => {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <Link className="dropdown-item" to="/useReducerHook">
+                      UseReducer
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -74,18 +74,24 @@ const Navbar = (props) => {
               </li>
             </ul>
             <div className="container">
-              {userdata.name} uses {userdata.email}
+              {userdata.name}
               <button
                 className="btn-primary"
                 onClick={() => {
-                  setUserData({
-                    name: "Hero",
-                    email: "Hiralal@gmail.com",
-                    login: true,
-                  });
+                  !userdata.login
+                    ? setUserData({
+                        name: "Hero",
+                        email: "Hiralal@gmail.com",
+                        login: true,
+                      })
+                    : setUserData({
+                        name: "",
+                        email: "",
+                        login: false,
+                      });
                 }}
               >
-                Login
+                {!userdata.login ? "Login" : "Logout"}
               </button>
               <p>{!userdata.login ? "User not logged in" : "User logged in"}</p>
             </div>

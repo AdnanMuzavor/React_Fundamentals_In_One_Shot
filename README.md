@@ -141,4 +141,66 @@ VALID SOLN: Create a context and use context API
 - Context is out side of app.js and can be used by any component there in. it's isolated from component 
   hierarchy as shown above
 
+Example: Look at the code
 
+## useReducer
+- This hook is to be used when we  want to handle larger number of states together stored at single place.
+- It takes in reducer function and initial state as i/p and returns
+- dispatch and state as output,where state is  state that has been updated and dispatch is used to trigger reducer for a particular
+  action and can cause change in state 
+Example:
+----------------------------------------------------------------------------
+import { useReducer } from "react";
+
+//Define initial state
+const initialState = {
+  count: 0,
+  Operation: "Nill",
+};
+
+//Define the reducer
+const reducer = (state, action) => {
+  console.log(action);
+  console.log(state);
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1, Operation: action.type };
+
+    case "DECREMENT":
+      return { count: state.count - 1, Operation: action.type };
+
+    default:
+      break;
+  }
+};
+
+const UseReducerDemo = () => {
+  //reducer is  pure function whcih talkes state and action as input and based on action i.e requested it updates the state
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  //it returns the updated state and dispatch function whcih is used to dispatch an action
+
+  return (
+    <>
+      <div className="container">
+        <h2>{state.count}</h2>
+        <button
+          className="btn-primary mx-2 my-2"
+          onClick={() => dispatch({ type: "INCREMENT" })}
+        >
+          Increment
+        </button>
+        <button
+          className="btn-primary mx-2 my-2"
+          onClick={() => dispatch({ type: "DECREMENT" })}
+        >
+          Decrement
+        </button>
+      </div>
+    </>
+  );
+};
+
+export default UseReducerDemo;
+
+----------------------------------------------------------------------------
