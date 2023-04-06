@@ -69,29 +69,36 @@ const Navbar=(props)=>{
         <>
     )
 }
-______________________________________________________
-pre-requisite: 
-- npm install prop-types --save
-- import PropTypes from 'prop-types';
-- **propTypes** are used to set the types for the props to be rececived
-______________________________________________________
-- example: 
-Navbar.propTypes={
-    title: PropTypes.string,
-    pages: PropTupes.string,
-    linktitle:PropTypes.string.isRequired
-}
-______________________________________________________
-
- - **defaultProps**: are used to pass default props to the components.
- - Incase values for components are not passed then default values can be picked up.
- ______________________________________________________
-- example: 
-Navbar.defaultProps={
-    title: "Hello React",
-    pages: "10"
-    
-}
-______________________________________________________
 
 --------------------------------------------------------------------------------------------------------------
+### React Hooks
+
+## useState
+- This hook is used for handing state in react.
+- The systax is as follows
+
+---------------------------------------
+const [text,setText]=useState("Hello")
+---------------------------------------
+
+**text** -> variable used for accessing the value of state
+**setText** -> Is used to change the value of state which is referneced using text variable
+
+## useEffect
+- This hook is call back function called when page is reloaded or state mentione in call back criteria changes
+- The systax is as follows
+
+---------------------------------------
+  //This useeffect will be called as soon a spage reloads/loads
+  useEffect(() => {
+    setcount(8);
+  }, []);
+
+  //This useeffect will be called as  soon as the state in [ changes ]
+  useEffect(() => {
+   console.log("The count has been changed")
+  }, [count]);
+---------------------------------------
+
+
+
