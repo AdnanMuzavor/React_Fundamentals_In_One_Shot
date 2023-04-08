@@ -83,7 +83,7 @@ return (
 )
 }
 
----
+----------------------------------------------------------------------
 
 ### React Hooks
 
@@ -92,19 +92,20 @@ return (
 - This hook is used for handing state in react.
 - The systax is as follows
 
----
+----------------------------------------------------------------------
 
 ## const [text,setText]=useState("Hello")
 
 **text** -> variable used for accessing the value of state
 **setText** -> Is used to change the value of state which is referneced using text variable
 
+----------------------------------------------------------------------
+
 ## useEffect
 
 - This hook is call back function called when page is reloaded or state mentione in call back criteria changes
 - The systax is as follows:
 
----
 
 ## useEffect(function,dependency)
 
@@ -125,7 +126,7 @@ useEffect(() => {
 console.log("The count has been changed")
 }, [count]);
 
----
+----------------------------------------------------------------------
 
 ## React Context
 
@@ -147,15 +148,15 @@ consider following
        |                      |                   |         -----------------
      SHOP                    Blogs               Offers                    |
        |                                          |                        |
+--------------                                ----------                   |
+   |       |                                   |      |         UseContext(login)
+Clothing Food                                 O1      O2-----------|
 
--------------- ---------- **\_\_\_**UseContext(login)
-| | | | |
-Clothing Food O1 O2--------
-\_\_\_> Login here wqe have login state which is true then accesing it at SHOP will be very complicated task
+ Login here we have login state which is true at O2 then accesing it at SHOP will be very complicated task
 
 ---
 
-SOLN: L I F T \_**\_ T H E \_\_** S T A T E
+SOLN: **L I F T __**__ T H E __** S T A T E
 
 - i.e we keep the entire state in app.js so that all components can access it
 - But in that case we have to do prop drilling from App.js to respective component say o1
@@ -176,8 +177,7 @@ Example: Look at the code
   action and can cause change in state
   Example:
 
----
-
+----------------------------------------------------------------------
 import { useReducer } from "react";
 
 //Define initial state
@@ -229,9 +229,9 @@ Decrement
 );
 };
 
-export default UseReducerDemo;
+export default UseReducerDemo; 
+----------------------------------------------------------------------
 
----
 
 ## useLocation
 
@@ -246,7 +246,7 @@ export default UseReducerDemo;
 - path is: useLocationHook2/userprofile
 - search is: ?name=Adnan&email=12@gmail.com&qty=10
 
----
+----------------------------------------------------------------------
 
 ## useHistory
 
@@ -256,7 +256,7 @@ export default UseReducerDemo;
 - **history.goback()**: Takes to prev page visited.
 - **history.push("/path")** : Take to path specified.
 
----
+----------------------------------------------------------------------
 
 ## useParams
 
@@ -267,4 +267,4 @@ export default UseReducerDemo;
 - It can get access through:
 - **const {id}=useParams();**
 
----
+----------------------------------------------------------------------

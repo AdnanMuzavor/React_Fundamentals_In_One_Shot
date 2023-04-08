@@ -33,11 +33,7 @@ const Navbar = (props) => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
+        
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -90,9 +86,7 @@ const Navbar = (props) => {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
-              </li>
+          
             </ul>
             <div className="container">
               {userdata.name}
@@ -101,7 +95,7 @@ const Navbar = (props) => {
                 onClick={() => {
                   !userdata.login
                     ? setUserData({
-                        name: "Hero",
+                        name: "Hero ",
                         email: "Hiralal@gmail.com",
                         login: true,
                       })
@@ -112,7 +106,7 @@ const Navbar = (props) => {
                       });
                 }}
               >
-                {!userdata.login ? "Login" : "Logout"}
+                {!userdata.login ? "Login [Using useContext]" : "Logout [Using useContext]"}
               </button>
               <p>{!userdata.login ? "User not logged in" : "User logged in"}</p>
             </div>

@@ -1,9 +1,13 @@
 import React from "react";
+import Header from "../CommonComponents/Header";
 
 const Home = () => {
   return (
     <>
-      <h1>Hello, I am home screen</h1>
+      <Header
+      title="This site demonstrates various hooks in react.js and other fundamentals"
+      description={""}
+      />
     </>
   );
 };
