@@ -15,8 +15,8 @@ const RouterForScreen = () => {
       <Route path="/useEffectHook" render={() => <UseEffectDemo />}></Route>
       <Route path="/useReducerHook" render={() => <UseReducerDemo />}></Route>
       <Route  path="/useHistoryHook" render={() => <UseHistoryDemo />}></Route>
-      <Route exact path="/useLocationHook:id" render={() => <UseLocationDemo />}></Route>
-      <Route exact path="/useLocationHook2/userprofile" render={() => <UseLocationDemo2 />}></Route>
+      <Route exact path="/useLocationHook:id" render={(props) => <UseLocationDemo {...props} />}></Route>
+      <Route exact path="/useLocationHook2/userprofile" render={(props) => <UseLocationDemo2 {...props}  />}></Route>
       <Route exact path="/" render={() => <Home />}></Route>
      
     </>

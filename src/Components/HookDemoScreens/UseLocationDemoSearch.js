@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-const UseLocationDemo2 = () => {
+const UseLocationDemo2 = (props) => {
   const location = useLocation();
+
   console.log(location);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ const UseLocationDemo2 = () => {
   }, []);
   return (
     <>
-    <h2>path is: {location.pathname}</h2>
+      <h2>path is: {location.pathname}</h2>
       <h1>Hello {name}</h1>
       <h2>Your email is: {email}</h2>
       <h3>You have ordered: {qty}</h3>
