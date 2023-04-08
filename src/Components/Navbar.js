@@ -67,6 +67,19 @@ const Navbar = (props) => {
                       UseReducer
                     </Link>
                   </li>
+                  <li>
+                    <Link className="dropdown-item" to="/useLocationHook:id">
+                      UseLocation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="dropdown-item"
+                      to="/useLocationHook2/userprofile?name=Adnan&email=12@gmail.com&qty=20"
+                    >
+                      UseLocation
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li className="nav-item">

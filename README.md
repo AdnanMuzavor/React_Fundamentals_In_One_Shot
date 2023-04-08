@@ -204,3 +204,16 @@ const UseReducerDemo = () => {
 export default UseReducerDemo;
 
 ----------------------------------------------------------------------------
+## useLocation
+- This hook help us to find out where the user is in the websiyte like on which poge and accoridingly we can act
+  respond to the user to satisfy his needs
+- This hooks basically gives us the current URL
+- NOTE: useLocation hook is provided by **react-router-dom**
+- uselocation offers follwing two important things
+- **pathname**: path where we current are
+- **search**  : the serahc string that we have used
+- example ***http://localhost:3000/useLocationHook2/userprofile?name=Adnan&email=12@gmail.com&qty=10***
+-  path is: useLocationHook2/userprofile
+-  search is: ?name=Adnan&email=12@gmail.com&qty=10
+
+----------------------------------------------------------------------------
