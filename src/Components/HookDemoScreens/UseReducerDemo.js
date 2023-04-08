@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import Header from "../CommonComponents/Header";
 
 //Define initial state
 const initialState = {
@@ -30,6 +31,10 @@ const UseReducerDemo = () => {
 
   return (
     <>
+         <Header
+       title="useReducer Hook"
+       description=""
+     />
       <div className="container">
         <h2>{state.count}</h2>
         <button

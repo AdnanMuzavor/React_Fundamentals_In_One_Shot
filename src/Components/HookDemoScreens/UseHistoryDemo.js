@@ -1,10 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Header from "../CommonComponents/Header";
 
 const UseHistoryDemo = () => {
   const history = useHistory();
   return (
     <>
+         <Header
+       title="useHistory Hook"
+       description=""
+     />
       <h1>Hello, Ill hsow you useHistory Hook demo</h1>
       <button
         className="btn btn-primary mt-3 my-3"

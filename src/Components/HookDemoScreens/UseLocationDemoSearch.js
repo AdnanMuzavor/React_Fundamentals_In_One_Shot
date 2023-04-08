@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Header from "../CommonComponents/Header";
 const UseLocationDemo2 = (props) => {
   const location = useLocation();
 
@@ -16,6 +17,10 @@ const UseLocationDemo2 = (props) => {
   }, []);
   return (
     <>
+         <Header
+       title="useLocation Hook"
+       description=""
+     />
       <h2>path is: {location.pathname}</h2>
       <h1>Hello {name}</h1>
       <h2>Your email is: {email}</h2>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../CommonComponents/Header";
 
 const UseStateDemo = () => {
   //state
@@ -10,6 +11,7 @@ const UseStateDemo = () => {
   };
   return (
     <>
+      <Header title="useStateHook" description="" />
       <div className="container">
         <form action="#" className="formwrap">
           <label htmlFor="textCaseChanger">Enter your text here</label>

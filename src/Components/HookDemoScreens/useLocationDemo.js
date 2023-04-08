@@ -1,5 +1,6 @@
 import { useLocation, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import Header from "../CommonComponents/Header";
 const UseLocationDemo = (props) => {
   const location = useLocation();
   const params=useParams();
@@ -26,6 +27,10 @@ const UseLocationDemo = (props) => {
   console.log(location);
   return (
     <>
+         <Header
+       title="useLocation Hook | useParams Hook | Use of props for params"
+       description=""
+     />
       <h1>Path is {path} </h1>
       <h2>Id is {id}</h2>
     </>

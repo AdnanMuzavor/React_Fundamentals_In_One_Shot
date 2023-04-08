@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../CommonComponents/Header";
 const UseEffectDemo = () => {
   const [count, setcount] = useState(0);
 
@@ -13,6 +14,10 @@ const UseEffectDemo = () => {
   }, [count]);
   return (
     <>
+     <Header
+       title="useEffect Hook"
+       description=""
+     />
       <div className="conatiner">
         <h1>Value of count is: {count}</h1>
         <button className="btn-primary" onClick={() => setcount(count + 1)}>
