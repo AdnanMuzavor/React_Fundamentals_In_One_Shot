@@ -266,7 +266,7 @@ export default UseReducerDemo;
 
 - it is used to exytract param passed in url for example **locahost/user:123**
 - here the 123 is param while it's name is specified in **Route** tag as follows
-- <Route path="/user:id" render=(()=><User />)></Route>
+- ***<Route path="/user:id" render=(()=><User />)></Route>***
 - hence here params= {id: 123}
 - It can get access through:
 - **const {id}=useParams();**
