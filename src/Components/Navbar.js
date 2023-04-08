@@ -11,9 +11,9 @@ const Navbar = (props) => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             {props.title}
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -68,8 +68,11 @@ const Navbar = (props) => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/useLocationHook:id">
-                      UseLocation
+                    <Link className="dropdown-item" to="/useLocationHook:id"> 
+
+                    {/* anything can replace id */}
+
+                      UseLocation with id
                     </Link>
                   </li>
                   <li>
@@ -77,7 +80,12 @@ const Navbar = (props) => {
                       className="dropdown-item"
                       to="/useLocationHook2/userprofile?name=Adnan&email=12@gmail.com&qty=20"
                     >
-                      UseLocation
+                      UseLocation with query string
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/useHistoryHook">
+                      UseHistory
                     </Link>
                   </li>
                 </ul>

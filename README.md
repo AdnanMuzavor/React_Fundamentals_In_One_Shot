@@ -205,6 +205,7 @@ export default UseReducerDemo;
 
 ----------------------------------------------------------------------------
 ## useLocation
+
 - This hook help us to find out where the user is in the websiyte like on which poge and accoridingly we can act
   respond to the user to satisfy his needs
 - This hooks basically gives us the current URL
@@ -217,3 +218,14 @@ export default UseReducerDemo;
 -  search is: ?name=Adnan&email=12@gmail.com&qty=10
 
 ----------------------------------------------------------------------------
+
+## useHistory
+
+- It keep track of your page history and help you to visit the pages you were on before.
+- Syntax: **const history=useHistory()**
+- Important functions
+- **history.goback()**: Takes to prev page visited.
+- **history.push("/path")** : Take to path specified.
+
+----------------------------------------------------------------------------
+
